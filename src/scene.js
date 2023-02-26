@@ -31,7 +31,7 @@ export async function init() {
     1,
     3000
   );
-  camera.position.z = 6;
+  camera.position.z = 10;
 
   const model = (await loadModel("/banana.glb")).scene.children[0];
   model.scale.multiplyScalar(0.03);

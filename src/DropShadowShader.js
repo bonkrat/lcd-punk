@@ -30,8 +30,8 @@ const DropShadowShader = ({ amount }) => ({
     void main() {
       vec4 color = texture2D(tDiffuse, vUv);
       vec4 backgroundColor = vec4(0.55, 0.67, 0.06, 1.);
-      vec4 shadowColor = backgroundColor; 
-      float shadowSize = 10.0;
+      vec4 shadowColor = backgroundColor * 0.99; 
+      float shadowSize = 12.0;
 
       bool isShadow = false;
       for(float i=0.0; i < shadowSize; i++) {
