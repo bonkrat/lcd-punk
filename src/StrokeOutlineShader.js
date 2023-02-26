@@ -4,8 +4,6 @@ const StrokeOutlineShader = ({ size }) => ({
   uniforms: {
     tDiffuse: { value: null },
     strokeSize: { value: size },
-    windowWidth: { value: window.innerWidth },
-    windowHeight: { value: window.innerHeight },
   },
   vertexShader: /* glsl */ `
       varying vec2 vUv;
@@ -20,8 +18,6 @@ const StrokeOutlineShader = ({ size }) => ({
   fragmentShader: /* glsl */ `
     uniform sampler2D tDiffuse;
     uniform float strokeSize;
-    uniform float windowWidth;
-    uniform float windowHeight;
 
     varying vec2 vUv;
 
@@ -31,12 +27,10 @@ const StrokeOutlineShader = ({ size }) => ({
 
       bool isStroke = false;
       for(float i=0.0; i < strokeSize; i++) {
-        if(gl_FragCoord.x + i < windowWidth && gl_FragCoord.y + i < windowHeight) {
             vec4 topRight = texelFetch(tDiffuse, ivec2(gl_FragCoord.xy + vec2(i, i)), 0);
             if(topRight != vec4(1.0) && color.rgb == vec3(1.0,1.0,1.0)) {
                 isStroke = true;
             }
-        } 
       }
 
       if(isStroke == true) {

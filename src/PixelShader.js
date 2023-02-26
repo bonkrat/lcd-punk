@@ -22,13 +22,13 @@ const PixelShader = ({ amount }) => ({
     varying vec2 vUv;
 
     vec4 pixelate(sampler2D s, vec2 uv) {
-        vec2 grid_uv = round(uv * amount) / amount;
-        return texture2D(s, grid_uv);
+      vec2 grid_uv = round(uv * amount) / amount;
+      return texture2D(s, grid_uv);
     }
 
     void main() {
-         vec4 color = pixelate(tDiffuse, vUv);
-         gl_FragColor = vec4(round(color.rgb), 1.0);
+       vec4 color = pixelate(tDiffuse, vUv);
+       gl_FragColor = vec4(round(color.rgb), 1.0);
 	  }`,
 });
 
