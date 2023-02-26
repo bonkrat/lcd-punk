@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>LCD shader</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <link type="text/css" rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="controlsContainer">
+      <div id="show">🔧</div>
+      <div id="hide" class="hidden">[X]</div>
+      <div id="controls" class="hidden">
+        <div class="control">
+          <label for="threshold">Detail: </label>
+          <input
+            class="uniform"
+            data-shader="1"
+            type="range"
+            min="1"
+            max="250"
+            value="100"
+            data-uniform="threshold"
+          />
+        </div>
+        <div class="control">
+          <label for="stroke">Stroke: </label>
+          <input
+            class="uniform"
+            data-shader="2"
+            type="range"
+            min="0"
+            max="50"
+            value="20"
+            data-uniform="size"
+          />
+        </div>
+        <div class="control">
+          <label for="pixel">Resolution: </label>
+          <input
+            class="uniform"
+            data-shader="3,4"
+            type="range"
+            min="0"
+            max="200"
+            value="100"
+            data-uniform="amount"
+          />
+        </div>
+      </div>
+    </div>
+    <div id="container"></div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
