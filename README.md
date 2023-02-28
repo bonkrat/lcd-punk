@@ -2,6 +2,8 @@
 
 Built with Three.JS and WebGL shaders.
 
+https://user-images.githubusercontent.com/1292831/221738275-f2eccbd7-3c92-49fd-981e-611103296b85.mp4
+
 [Demo](https://vercel.com/bonkrat/lcd-punk)
 
 ## Credits
