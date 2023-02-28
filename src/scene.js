@@ -35,6 +35,8 @@ export async function init() {
 
   const model = (await loadModel("/banana.glb")).scene.children[0];
   model.scale.multiplyScalar(0.03);
+  model.rotation.x = -1.5;
+  model.rotation.z = 2.5;
   scene.add(model);
 
   const lightColor = new THREE.Color(0xffffff);
@@ -60,7 +62,7 @@ export async function init() {
 
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.autoRotate = true;
-  controls.autoRotateSpeed = 5.0;
+  controls.autoRotateSpeed = 1;
   controls.enableDamping = true;
   controls.dampingFactor = 0.05;
   controls.rotateSpeed = 3;

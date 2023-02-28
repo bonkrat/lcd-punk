@@ -10,6 +10,19 @@ body {
   justify-content: center;
 }
 
+#frame {
+  box-sizing: border-box;
+  background-color: transparent;
+  border-bottom: 15vh solid #333;
+  border-left: 25px solid #333;
+  border-top: 5vh solid #333;
+  border-right: 25px solid #333;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
 #show,
 #hide {
   cursor: pointer;
@@ -24,13 +37,21 @@ body {
   position: fixed;
   bottom: 1rem;
   left: 1rem;
-  background-color: white;
+  background-color: #333;
+  color: white;
+  font-size: 1rem;
+  z-index: 100;
+  border: 1px solid white;
 }
 
 .control {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  padding: 0.5rem 0;
+}
+
+.control label {
+  margin-right: 2rem;
 }
 
 .hidden {
